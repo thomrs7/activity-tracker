@@ -20,7 +20,7 @@ shinyUI(fluidPage(
                   min = 1,
                   max = length(unique(steps$value)),
                   value = 30)
-    ),
+    ), 
 
     # Show a plot of the generated distribution
     mainPanel(

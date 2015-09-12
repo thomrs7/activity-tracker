@@ -23,4 +23,3 @@ steps$value <- as.numeric(as.character(steps$value))
 
 
 
-
