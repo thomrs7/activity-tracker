@@ -1,4 +1,5 @@
 library(httr)
+library(ggplot2)
 
 source('config.R')
 
@@ -15,5 +16,11 @@ gtoken = config(token = token)
 resp = GET('https://api.fitbit.com/1/user/-/activities/steps/date/2015-01-19/today.json', gtoken)
 d <- content(resp)
 steps <- do.call(rbind.data.frame, d$`activities-steps`)
+
+
+steps$value <- as.numeric(as.character(steps$value))
+
+
+
 
 
