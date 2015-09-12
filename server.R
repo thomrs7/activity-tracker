@@ -5,7 +5,8 @@ shinyServer(function(input, output) {
     
     output$distPlot <- renderPlot({
         
-        p <-ggplot(steps, aes(x=value)) + geom_histogram(binwidth=90)
+    
+            p <-ggplot(steps, aes(x=value)) + geom_histogram(binwidth=input$bins)
 
         print(p)
         
