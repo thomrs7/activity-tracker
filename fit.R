@@ -19,6 +19,8 @@ steps <- do.call(rbind.data.frame, d$`activities-steps`)
 
 
 steps$value <- as.numeric(as.character(steps$value))
+steps$dateTime <- as.Date(steps$dateTime)
+
 
 
 
