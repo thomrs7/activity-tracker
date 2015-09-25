@@ -16,10 +16,12 @@ gtoken = config(token = token)
 resp = GET('https://api.fitbit.com/1/user/-/activities/steps/date/2015-01-19/today.json', gtoken)
 d <- content(resp)
 steps <- do.call(rbind.data.frame, d$`activities-steps`)
-
-
 steps$value <- as.numeric(as.character(steps$value))
 steps$dateTime <- as.Date(steps$dateTime)
+
+#Sleep
+resp = GET('https://api.fitbit.com/1/user/28H22H/sleep/minutesAsleep/date/2015-01-19/today.json', gtoken)
+d <- content(resp)
 
 
 
