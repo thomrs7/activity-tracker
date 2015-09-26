@@ -57,8 +57,8 @@ sleepDetail$sleep.minutesAsleep <- as.numeric(as.character(sleepDetail$sleep.min
 sleepDetail$sleep.dateOfSleep <- as.Date(sleepDetail$sleep.dateOfSleep)
 
 ggplot(sleepDetail, aes(x=sleep.dateOfSleep, y=sleep.minutesAsleep)) + 
-    geom_bar(stat="identity", position = 'dodge' aes(color=sleep.minutesAsleep)) +
-    scale_colour_gradientn(colours= viridis(12) )
+    geom_bar(stat="identity", position = 'dodge', aes(fill=sleep.minutesAsleep)) +
+    scale_fill_gradientn(colours= viridis(12))
 
 
 # awakeCount <-d[1]$sleep[1][[1]][1]$awakeCount
